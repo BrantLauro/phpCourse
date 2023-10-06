@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dollar Converter</title>
-    <link rel="stylesheet" href=".\style.css">
+    <link rel="stylesheet" href="..\style.css">
 </head>
 <body>
     <br>
@@ -21,12 +21,13 @@
             $reais = $_POST["reais"] ?? "";
             if($reais != ""){
                 date_default_timezone_set('America/Sao_Paulo');
-                $ini = date("m-d-Y", strtotime("-2 Days"));
+                $ini = date("m-d-Y", strtotime("-7 Days"));
                 $end = date("m-d-Y");
-                $url = 'https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarPeriodo(dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao)?@dataInicial=%27'.$ini.'%27&@dataFinalCotacao=%27'.$end.'%27&$top=100&$format=json&$select=cotacaoCompra';
+                $url = 'https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarPeriodo(dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao)?@dataInicial=%27'. $ini .'%27&@dataFinalCotacao=%27'. $end .'%27&$top=1&$orderby=dataHoraCotacao%20desc&$format=json&$select=cotacaoCompra,dataHoraCotacao';
                 $data = json_decode(file_get_contents($url), true);
-                $dollar = $reais / $data["value"][0]["cotacaoCompra"];
-                echo "<p style=\"text-align:center;\"><strong>R$". number_format($reais, 2) ."</strong> in Reais are <strong>$". number_format($dollar,2) ."</strong> in Dollars.</p>";
+                $price = $data["value"][0]["cotacaoCompra"];
+                $dollar = $reais / $price;
+                echo "<p style=\"text-align:center;\"><strong>R$". number_format($reais, 2) ."</strong> in Reais are <strong>$". number_format($dollar,2) ."</strong> in Dollars.<br>With a price of <strong>R$". number_format($price, 2). "</strong></p>";
             }
         ?>
     </section>
