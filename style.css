@@ -89,13 +89,14 @@ table {
 }
 
 table th {
-    background-color: #372991;
+    background-color: #dfdfdf;
     color: white;
     padding: 5px;
     text-align: left;
 }
 
 table td {
+    background-color:#dfdfdf;
     padding: 5px;
 }
 
@@ -108,11 +109,11 @@ table tr:nth-child(odd) {
 }
 
 table.divisao {
-    border: 1px solid white;
+    border: 1px solid #dfdfdf;
 }
 
 table.divisao td {
-    background-color: white;
+    background-color:#dfdfdf;
     padding: 20px;
     text-align: center;
     font-size: 2.5em;
@@ -135,7 +136,10 @@ ul > li::marker {
     color: #372991;
 }
 
-/* ELEMENTOS DE FORMULÁRIO */
+h1 {
+    text-align: center;
+}
+
 
 form {
     /*background-color: rgba(41, 41, 41, 0.2);*/
