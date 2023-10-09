@@ -19,6 +19,7 @@
             <input type="submit" value="Submit">
         </form>
     </section>
+    <?php \\just to have some php ?>
     <footer>
         <p>&copy; LauroBrant</p>
     </footer>
