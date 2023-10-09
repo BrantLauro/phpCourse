@@ -11,7 +11,7 @@
     <section>
         <?php $reais = ""?>
         <form action="<?=$_SERVER['PHP_SELF']?>" method="post">
-            <h1 style="text-align:center;">Dollar Converter!</h1>
+            <h1>Dollar Converter!</h1>
             <label for="reais">R$:</label>
             <input type="number" name="reais" step="0.01">
             <input type="submit" value="Submit">
@@ -27,7 +27,7 @@
                 $data = json_decode(file_get_contents($url), true);
                 $price = $data["value"][0]["cotacaoCompra"];
                 $dollar = $reais / $price;
-                echo "<p style=\"text-align:center;\"><strong>R$". number_format($reais, 2) ."</strong> in Reais are <strong>$". number_format($dollar,2) ."</strong> in Dollars.<br>With a price of <strong>R$". number_format($price, 2). "</strong></p>";
+                echo "<p><strong>R$". number_format($reais, 2) ."</strong> in Reais are <strong>$". number_format($dollar,2) ."</strong> in Dollars.<br>With a price of <strong>R$". number_format($price, 2). "</strong></p>";
             }
         ?>
     </section>

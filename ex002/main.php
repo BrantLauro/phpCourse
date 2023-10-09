@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="..\style.css">
 </head>
 <body>
+    <h1>Randomize:</h1>
     <section>
         <form action="<?=$_SERVER['PHP_SELF']?>" method="post">
-            <h1 style="text-align:center;">Randomize:</h1>
-            <p>Press Generate to randomize the 6 numbers from <strong>Mega Sena</strong></p>
+            <p style="text-align:justify">Press Generate to randomize the 6 numbers from <strong>Mega Sena</strong></p>
             <?php if($_SERVER['REQUEST_METHOD'] === 'POST') { ?>
                 <p>Result: <strong><?php randms()?></strong><br>
             <?php } ?>

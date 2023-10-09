@@ -11,7 +11,7 @@
     <section>
         <?php $n1 = ""; $n2 = ""; ?>
         <form action="<?=$_SERVER['PHP_SELF']?>" method="post">
-            <h1 style="text-align:center;">Division Anatomy!</h1>
+            <h1>Division Anatomy!</h1>
             <label for="reais">Type a number:</label>
             <input type="number" name="n1" value="0">
             <label for="reais">Type another number:</label>

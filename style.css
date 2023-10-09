@@ -50,7 +50,7 @@ section{
 }
 
 p {
-    text-align: justify;
+    text-align: center;
     line-height: 1.5em;
 }
 
@@ -135,11 +135,6 @@ table.divisao tr:nth-child(2) td:nth-child(1) {
 ul > li::marker {
     color: #372991;
 }
-
-h1 {
-    text-align: center;
-}
-
 
 form {
     /*background-color: rgba(41, 41, 41, 0.2);*/
@@ -234,4 +229,8 @@ input[type=radio] + label, input[type=checkbox] + label {
     display: inline-block;
     font-size: 1em;
     background-color: rgba(0, 0, 0, 0);
+}
+
+p, h1 {
+    text-align: center;
 }
