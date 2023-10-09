@@ -132,10 +132,6 @@ table.divisao tr:nth-child(2) td:nth-child(1) {
     text-decoration: underline;
 }
 
-ul > li::marker {
-    color: #372991;
-}
-
 form {
     /*background-color: rgba(41, 41, 41, 0.2);*/
     padding: 15px;
